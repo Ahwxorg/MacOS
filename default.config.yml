@@ -1,0 +1,117 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: true
+configure_terminal: true
+configure_osx: true
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: false
+dockitems_remove: []
+# - Launchpad
+# - TV
+# - Podcasts
+# - 'App Store'
+dockitems_persist: []
+# - name: "Kitty"
+#   path: "/Applications/Kitty.app/"
+#   pos: 5
+
+configure_sudoers: false
+sudoers_custom_config: ''
+# Example:
+# sudoers_custom_config: |
+#   # Allow users in admin group to use sudo with no password.
+#   %admin ALL=(ALL) NOPASSWD: ALL
+
+dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/Development/dotfiles
+dotfiles_files:
+  - .gitignore
+  - .inputrc
+  - .osx
+
+homebrew_installed_packages:
+  - neovim
+  - koekeishiya/formulae/yabai
+  - bitwarden
+  - fish
+  - yabai
+  - skhd
+  - git
+  - go
+  - gpg
+  - iperf
+  - nmap
+  - node
+  - nvm
+  - php
+  - ssh-copy-id
+  - openssl
+  - wget
+  - openvpn
+  - virt-manager
+  - tor
+  - neofetch
+  - shellcheck
+  - gnu-tar
+  - meson
+  - jq
+  - fzf
+  - irssi
+  - torsocks
+  - htop
+  - tmux
+  - exa
+  - iftop
+  - ripgrep
+  - imagemagick
+  - mpv
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - koekeishiya/formulae
+  - cmacrae/formulae
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - istat-menus
+  - spacebar
+  - audacity
+  - sol
+  - yubico-yubikey-manager
+  - libreoffice
+  - element
+  - signal
+  - kdenlive
+  - spotify
+  - ultimaker-cura
+  - yabai
+  - docker
+  - firefox
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+npm_packages: []
+ - name: prettier
+   state: present # present/absent/latest, default: present
+ - name: yarn
+   state: present
+#   version: "^2.6" # default: N/A
+pip_packages: []
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
